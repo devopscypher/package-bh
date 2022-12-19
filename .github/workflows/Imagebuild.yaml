@@ -2,7 +2,7 @@ name: docker image build
 on:
   push:
     branches:
-      - ' master '
+      -  master 
   workflow_dispatch:
     inputs:
       tag:
@@ -11,12 +11,12 @@ on:
         required: true
 jobs:
   build:
-     uses: umangcypher-BHTESTING-TRIVY/.github/workflows/docker-image-build-scan-push-github.yaml@master
+     uses: devopscypher/testing-trivy/.github/workflows/docker-image-build-scan-push-github.yaml@master
      with:
       # Container Image Name // update it as per project name.
       image_name: "trivyscan"
       # Repo Name
-      GHCR_REPO: "ghcr.io/umangcypher-BH/trivy-bh-master-2"
+      GHCR_REPO: "ghcr.io/devopscypher/package-bh"
       # Path to the Dockerfile. (default {context}/Dockerfile)
       docker_file_path: "."
       # "location of lock file in git repository (Trivy will look for vulnerabilities based on lock files such as Gemfile.lock and package-lock.json)"  
@@ -24,5 +24,5 @@ jobs:
       # Image Tag
       image_tag: ${{ github.event.inputs.tag }}
       # GH Username 
-      username: 'umangcypher-BH'
+      username: 'devopscypher'
      secrets: inherit
