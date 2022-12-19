@@ -16,7 +16,7 @@ jobs:
       # Container Image Name // update it as per project name.
       image_name: "trivyscan"
       # Repo Name
-      GHCR_REPO: -t "ghcr.io/devopscypher/package-bh"
+      GHCR_REPO: "ghcr.io/devopscypher/package-bh/trivyscan"
       # Path to the Dockerfile. (default {context}/Dockerfile)
       docker_file_path: "."
       # "location of lock file in git repository (Trivy will look for vulnerabilities based on lock files such as Gemfile.lock and package-lock.json)"  
